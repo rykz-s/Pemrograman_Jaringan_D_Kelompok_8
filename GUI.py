@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import font
 from tkinter import ttk
 from tkinter import filedialog
+from tkinter import *
 import time
 import threading
 import os
@@ -21,31 +22,35 @@ class GUI:
 
         self.login.title("Login")
         self.login.resizable(width=False, height=False)
-        self.login.configure(width=400, height=350)
+        self.login.configure(width=400, height=430, bg="#88D5D5")
 
         self.pls = tk.Label(self.login,
-                            text="Please Login to a chatroom",
+                            text="  GROUP CHAT",
                             justify=tk.CENTER,
-                            font="Helvetica 12 bold")
+                            font="calibri 12 bold",
+                            bg="#88D5D5")
 
-        self.pls.place(relheight=0.15, relx=0.2, rely=0.07)
+        self.pls.place(relheight=0.15, relx=0.36, rely=0.07)
 
-        self.userLabelName = tk.Label(self.login, text="Username: ", font="Helvetica 11")
+        self.userLabelName = tk.Label(self.login, text="Username: ", font="calibri 11", bg="#88D5D5")
         self.userLabelName.place(relheight=0.2, relx=0.1, rely=0.25)
 
-        self.userEntryName = tk.Entry(self.login, font="Helvetica 12")
-        self.userEntryName.place(relwidth=0.4 ,relheight=0.1, relx=0.35, rely=0.30)
+        self.userEntryName = tk.Entry(self.login, font="calibri 12")
+        self.userEntryName.place(relwidth=0.4 , relx=0.35, rely=0.325)
         self.userEntryName.focus()
 
-        self.roomLabelName = tk.Label(self.login, text="Room Id: ", font="Helvetica 12")
+        self.roomLabelName = tk.Label(self.login, text="Room ID: ", font="calibri 12", bg="#88D5D5")
         self.roomLabelName.place(relheight=0.2, relx=0.1, rely=0.40)
 
-        self.roomEntryName = tk.Entry(self.login, font="Helvetica 11", show="*")
-        self.roomEntryName.place(relwidth=0.4 ,relheight=0.1, relx=0.35, rely=0.45)
+        self.roomEntryName = tk.Entry(self.login, font="calibri 11", show="*")
+        self.roomEntryName.place(relwidth=0.4 , relx=0.35, rely=0.475)
 
         self.go = tk.Button(self.login,
-                            text="CONTINUE",
-                            font="Helvetica 12 bold",
+                            text="LOGIN",
+                            font="calibri 12 bold",
+                            bg="#88D5D5",
+                            width=13,
+                            height=1,
                             command = lambda: self.goAhead(self.userEntryName.get(), self.roomEntryName.get()))
 
         self.go.place(relx=0.35, rely=0.62)
@@ -75,7 +80,7 @@ class GUI:
                                     bg = "#17202A",
                                     fg = "#EAECEE",
                                     text = self.name ,
-                                    font = "Helvetica 11 bold",
+                                    font = "calibri 11 bold",
                                     pady = 5)
 
         self.chatBoxHead.place(relwidth = 1)
@@ -89,7 +94,7 @@ class GUI:
                                 height=2,
                                 bg="#17202A",
                                 fg="#EAECEE",
-                                font="Helvetica 11",
+                                font="calibri 11",
                                 padx=5,
                                 pady=5)
 
@@ -103,7 +108,7 @@ class GUI:
         self.entryMsg = tk.Entry(self.labelBottom,
                                 bg = "#2C3E50",
                                 fg = "#EAECEE",
-                                font = "Helvetica 11")
+                                font = "calibri 11")
         self.entryMsg.place(relwidth = 0.74,
 							relheight = 0.03,
 							rely = 0.008,
@@ -112,7 +117,7 @@ class GUI:
 
         self.buttonMsg = tk.Button(self.labelBottom,
 								text = "Send",
-								font = "Helvetica 10 bold",
+								font = "calibri 10 bold",
 								width = 20,
 								bg = "#ABB2B9",
 								command = lambda : self.sendButton(self.entryMsg.get()))
@@ -131,7 +136,7 @@ class GUI:
                                 text = "Choose file to send",
                                 bg = "#2C3E50",
                                 fg = "#EAECEE",
-                                font = "Helvetica 11")
+                                font = "calibri 11")
         self.fileLocation.place(relwidth = 0.65,
                                 relheight = 0.03,
                                 rely = 0.008,
@@ -139,7 +144,7 @@ class GUI:
 
         self.browse = tk.Button(self.labelFile,
 								text = "Browse",
-								font = "Helvetica 10 bold",
+								font = "calibri 10 bold",
 								width = 13,
 								bg = "#ABB2B9",
 								command = self.browseFile)
@@ -150,7 +155,7 @@ class GUI:
 
         self.sengFileBtn = tk.Button(self.labelFile,
 								text = "Send",
-								font = "Helvetica 10 bold",
+								font = "calibri 10 bold",
 								width = 13,
 								bg = "#ABB2B9",
 								command = self.sendFile)
