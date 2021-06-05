@@ -75,32 +75,32 @@ class GUI:
         self.Window.deiconify()
         self.Window.title("CHATROOM")
         self.Window.resizable(width=False, height=False)
-        self.Window.configure(width=470, height=550, bg="#17202A")
+        self.Window.configure(width=470, height=550, bg="#16D86A")
         self.chatBoxHead = tk.Label(self.Window,
-                                    bg = "#17202A",
+                                    bg = "#16D86A",
                                     fg = "#EAECEE",
                                     text = self.name ,
-                                    font = "calibri 11 bold",
+                                    font = "roboto 12 bold",
                                     pady = 5)
 
         self.chatBoxHead.place(relwidth = 1)
 
-        self.line = tk.Label(self.Window, width = 450, bg = "#ABB2B9")
+        self.line = tk.Label(self.Window, width = 450, bg = "#9BD5C4")
 
         self.line.place(relwidth = 1, rely = 0.07, relheight = 0.012)
 
         self.textCons = tk.Text(self.Window,
                                 width=20,
                                 height=2,
-                                bg="#17202A",
+                                bg="#16D86A",
                                 fg="#EAECEE",
-                                font="calibri 11",
+                                font="roboto 12",
                                 padx=5,
                                 pady=5)
 
         self.textCons.place(relheight=0.745, relwidth=1, rely=0.08)
 
-        self.labelBottom = tk.Label(self.Window, bg="#ABB2B9", height=80)
+        self.labelBottom = tk.Label(self.Window, bg="#9BD5C4", height=80)
 
         self.labelBottom.place(relwidth = 1,
 							    rely = 0.8)
@@ -108,7 +108,7 @@ class GUI:
         self.entryMsg = tk.Entry(self.labelBottom,
                                 bg = "#2C3E50",
                                 fg = "#EAECEE",
-                                font = "calibri 11")
+                                font = "roboto 12")
         self.entryMsg.place(relwidth = 0.74,
 							relheight = 0.03,
 							rely = 0.008,
@@ -117,9 +117,9 @@ class GUI:
 
         self.buttonMsg = tk.Button(self.labelBottom,
 								text = "Send",
-								font = "calibri 10 bold",
+								font = "roboto 10 bold",
 								width = 20,
-								bg = "#ABB2B9",
+								bg = "#9BD5C4",
 								command = lambda : self.sendButton(self.entryMsg.get()))
         self.buttonMsg.place(relx = 0.77,
 							rely = 0.008,
@@ -127,7 +127,7 @@ class GUI:
 							relwidth = 0.22)
 
 
-        self.labelFile = tk.Label(self.Window, bg="#ABB2B9", height=70)
+        self.labelFile = tk.Label(self.Window, bg="#9BD5C4", height=70)
 
         self.labelFile.place(relwidth = 1,
 							    rely = 0.9)
@@ -136,7 +136,7 @@ class GUI:
                                 text = "Choose file to send",
                                 bg = "#2C3E50",
                                 fg = "#EAECEE",
-                                font = "calibri 11")
+                                font = "roboto 11")
         self.fileLocation.place(relwidth = 0.65,
                                 relheight = 0.03,
                                 rely = 0.008,
@@ -144,9 +144,9 @@ class GUI:
 
         self.browse = tk.Button(self.labelFile,
 								text = "Browse",
-								font = "calibri 10 bold",
+								font = "roboto 10 bold",
 								width = 13,
-								bg = "#ABB2B9",
+								bg = "#9BD5C4",
 								command = self.browseFile)
         self.browse.place(relx = 0.67,
 							rely = 0.008,
@@ -155,9 +155,9 @@ class GUI:
 
         self.sengFileBtn = tk.Button(self.labelFile,
 								text = "Send",
-								font = "calibri 10 bold",
+								font = "roboto 10 bold",
 								width = 13,
-								bg = "#ABB2B9",
+								bg = "#9BD5C4",
 								command = self.sendFile)
         self.sengFileBtn.place(relx = 0.84,
 							rely = 0.008,
